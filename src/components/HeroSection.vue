@@ -8,9 +8,10 @@
       <h1 class="hero-title">
         <em>Margaux</em>,<br><br>
         Encordée le week-end,
-en Sézane la semaine
+        en Sézane la semaine
       </h1>
       <p class="hero-sub">Un cadeau en trois temps, pour une femme à 300%</p>
+      <CagnotteButton />
       <div class="hero-scroll-hint">
         <span>Découvrir les cadeaux</span>
       </div>
@@ -19,6 +20,8 @@ en Sézane la semaine
 </template>
 
 <script setup>
+import CagnotteButton from './CagnotteButton.vue';
+
 const bgImage = './images/backgroundHero.jpg'
 </script>
 
@@ -42,12 +45,10 @@ const bgImage = './images/backgroundHero.jpg'
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.92) 30%,
-    rgba(10, 10, 10, 0.35) 70%,
-    rgba(10, 10, 10, 0.15) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(10, 10, 10, 0.92) 30%,
+      rgba(10, 10, 10, 0.35) 70%,
+      rgba(10, 10, 10, 0.15) 100%);
 }
 
 .hero-content {
@@ -93,6 +94,7 @@ const bgImage = './images/backgroundHero.jpg'
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
+  margin-top: 2rem;
 }
 
 .hero-scroll-hint::after {

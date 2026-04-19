@@ -27,7 +27,7 @@
             <span class="recap-total-amount">{{ total }} €</span>
         </div>
 
-        <a class="recap-cta" :href="cagnotteUrl" target="_blank" rel="noopener">✦ Contribuer à la cagnotte</a>
+        <CagnotteButton />
 
         <p class="recap-note">
             Merci de votre générosité pour les 30 ans de Margaux ✦
@@ -36,6 +36,8 @@
 </template>
 
 <script setup>
+import CagnotteButton from './CagnotteButton.vue';
+
 defineProps({
     gifts: {
         type: Array,
