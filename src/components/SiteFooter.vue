@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <span class="footer-name">Margaux · 30 ans</span>
-    <span class="footer-sub">Organisé avec amour · Haute-Savoie 2025</span>
+    <span class="footer-sub">Organisé avec amour · Haute-Savoie 2026</span>
   </footer>
 </template>
 

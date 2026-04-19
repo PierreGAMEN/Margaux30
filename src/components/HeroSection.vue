@@ -4,13 +4,13 @@
     <div class="hero-gradient"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">30 ans · Cadeau collectif</p>
+      <p class="hero-eyebrow">30 ans · L'ascension collective</p>
       <h1 class="hero-title">
-        Pour <em>Margaux</em>,<br>
-        qui grimpe haut<br>
-        et reste toujours stylée.
+        <em>Margaux</em>,<br>
+        Celle qui enchaîne les longueurs le samedi,<br>
+        et l'élégance le reste de la semaine.
       </h1>
-      <p class="hero-sub">Paris, la montagne, et la femme au milieu de tout ça.</p>
+      <p class="hero-sub">Un cadeau en trois temps, pour une femme à 300%</p>
       <div class="hero-scroll-hint">
         <span>Découvrir les cadeaux</span>
       </div>
@@ -66,7 +66,7 @@ const bgImage = './images/backgroundHero.jpg'
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 10vw, 64px);
+  font-size: clamp(36px, 9vw, 64px);
   line-height: 1.08;
   color: #f5f0e8;
   margin-bottom: 16px;
