@@ -6,9 +6,9 @@
     <div class="hero-content">
       <p class="hero-eyebrow">30 ans · L'ascension collective</p>
       <h1 class="hero-title">
-        <em>Margaux</em>,<br>
-        Celle qui enchaîne les longueurs le samedi,<br>
-        et l'élégance le reste de la semaine.
+        <em>Margaux</em>,<br><br>
+        Encordée le week-end,
+en Sézane la semaine
       </h1>
       <p class="hero-sub">Un cadeau en trois temps, pour une femme à 300%</p>
       <div class="hero-scroll-hint">
