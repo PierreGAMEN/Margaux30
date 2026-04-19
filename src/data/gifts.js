@@ -26,7 +26,7 @@ export const univers = [
     titleItalic: 'La pause méritée.',
     tagline: "Parce qu'entre les cours et les parois, le corps est mis à rude épreuve. Un moment suspendu pour relâcher la pression, soigner les tensions et recharger les batteries avant le prochain sommet.",
     accentColor: 'var(--c-accent-zen)',
-    bgImage: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80',
+    bgImage: './images/dodo.jpg',
   },
 ]
 
