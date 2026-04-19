@@ -1,0 +1,49 @@
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Variables ──────────────────────────────────────────── */
+:root {
+  /* Couleurs */
+  --c-dark:       #111111;
+  --c-dark-2:     #1a1a1a;
+  --c-light:      #f5f0e8;
+  --c-white:      #ffffff;
+  --c-gold:       #b8a98a;
+  --c-gold-light: #cfc0a0;
+  --c-border:     #e8e2d8;
+
+  /* Accents univers */
+  --c-accent-climb: #7aad8a;
+  --c-accent-chic:  #d4b483;
+  --c-accent-zen:   #8fb5c8;
+
+  /* Typographie */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Espacements */
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  48px;
+  --space-xl:  64px;
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--c-light);
+  color: var(--c-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
