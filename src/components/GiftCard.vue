@@ -1,5 +1,5 @@
 <template>
-    <article class="gift-card">
+    <article class="gift-card reveal" ref="cardEl" :style="{ transitionDelay: `${index * 80}ms` }">
         <div class="gift-card-img">
             <img v-if="gift.imageUrl" :src="gift.imageUrl" :alt="gift.name" loading="lazy" @error="onImgError" />
             <div v-if="imgError || !gift.imageUrl" class="gift-card-emoji">
@@ -20,17 +20,37 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
-    gift: {
-        type: Object,
-        required: true,
-    },
+    gift: { type: Object, required: true },
+    index: { type: Number, default: 0 },
 })
 
 const imgError = ref(false)
 const onImgError = () => { imgError.value = true }
+
+const cardEl = ref(null)
+let observer = null
+
+onMounted(() => {
+    observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible')
+                    observer.unobserve(entry.target)
+                }
+            })
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -30px 0px' }
+    )
+    if (cardEl.value) observer.observe(cardEl.value)
+})
+
+onUnmounted(() => {
+    if (observer) observer.disconnect()
+})
 </script>
 
 <style scoped>
@@ -129,5 +149,18 @@ const onImgError = () => { imgError.value = true }
     text-decoration: none;
     border-bottom: 1px solid var(--c-border);
     padding-bottom: 1px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>

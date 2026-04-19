@@ -29,7 +29,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import GiftCard from './GiftCard.vue'
+import GiftCard from '@/components/GiftCard.vue'
 
 const props = defineProps({
   univers: {

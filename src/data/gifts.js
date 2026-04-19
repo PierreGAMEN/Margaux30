@@ -9,7 +9,7 @@ export const univers = [
     titleItalic: 'dans sa montagne.',
     tagline: "Elle a tout quitté pour les cimes. Une veste à la hauteur de ses sommets.",
     accentColor: 'var(--c-accent-climb)',
-    bgImage: 'https://images.unsplash.com/photo-1522163182402-834f871fd851?w=1200&q=80',
+    bgImage: '/images/margaux_climbing.jpg',
   },
   {
     id: 'chic',

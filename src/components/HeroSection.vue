@@ -4,7 +4,7 @@
     <div class="hero-gradient"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">30 ans · Cadeau collectif · Haute-Savoie</p>
+      <p class="hero-eyebrow">30 ans · Cadeau collectif</p>
       <h1 class="hero-title">
         Pour <em>Margaux</em>,<br>
         qui grimpe haut<br>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-const bgImage = 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80'
+const bgImage = './images/backgroundHero.jpg'
 </script>
 
 <style scoped>
