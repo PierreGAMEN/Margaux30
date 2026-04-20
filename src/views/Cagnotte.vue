@@ -22,8 +22,7 @@
           </div>
         </div>
         <p class="option-desc">
-          Ouvre l'app Lydia, recherche <strong>{{ lydiaHandle }}</strong> ou scanne le QR code.
-          Indique le montant et c'est tout.
+          Passe par l'app Lydia pour n'avoir aucun frais d'envoi.
         </p>
         <a class="option-cta" :href="lydiaUrl" target="_blank" rel="noopener">
           Payer avec Lydia →
@@ -35,16 +34,26 @@
         <div class="option-header">
           <span class="option-num">02</span>
           <div>
-            <h2 class="option-name">Weeroo</h2>
-            <p class="option-tag">Cagnotte en ligne</p>
+            <h2 class="option-name">Wero</h2>
+            <p class="option-tag">Virement instantané</p>
           </div>
         </div>
         <p class="option-desc">
-          Accède à la cagnotte en ligne et contribue par carte bancaire en quelques secondes.
+          Ouvre ton application bancaire, sélectionne Wero et envoie directement au numéro ci-dessous.
         </p>
-        <a class="option-cta" :href="weerooUrl" target="_blank" rel="noopener">
-          Accéder à la cagnotte →
-        </a>
+        <div class="rib-block">
+          <div class="rib-line">
+            <span class="rib-label">Numéro</span>
+            <span class="rib-value">{{ weroPhone }}</span>
+          </div>
+          <div class="rib-line">
+            <span class="rib-label">Référence</span>
+            <span class="rib-value">Margaux30</span>
+          </div>
+        </div>
+        <button class="option-cta rib-copy" @click="copyPhone">
+          {{ phoneCopied ? '✓ Numéro copié !' : 'Copier le numéro' }}
+        </button>
       </div>
 
       <!-- RIB -->
@@ -82,6 +91,25 @@
         </button>
       </div>
 
+      <div class="progress-block">
+        <div class="progress-stats">
+          <div>
+            <span class="progress-amount">{{ cagnotte.collecte }} €</span>
+            <span class="progress-label">collectés</span>
+          </div>
+          <div class="progress-right">
+            <span class="progress-amount">{{ cagnotte.objectif }} €</span>
+            <span class="progress-label">objectif</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" :style="{ width: pourcentage + '%' }"></div>
+        </div>
+
+        <p class="progress-percent">{{ pourcentage }}% atteint</p>
+      </div>
+
     </div>
 
     <div class="cagnotte-back">
@@ -93,29 +121,39 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import SiteFooter from '../components/SiteFooter.vue'
+import { cagnotte } from '../data/gifts.js'
+
+const pourcentage = computed(() =>
+  Math.min(Math.round((cagnotte.collecte / cagnotte.objectif) * 100), 100)
+)
 
 // ── À remplir ───────────────────────────────────────────────
-const lydiaHandle = '@ton-handle-lydia'
-const lydiaUrl    = 'https://lydia-app.com/pay?...' // ← lien Lydia
+const lydiaUrl = 'https://pay.lydia.me/l?t=pierreg8rz0' // ← lien Lydia
 
-const weerooUrl   = 'https://weeroo.fr/...' // ← lien Weeroo
+const weroPhone = '0673607777'
 
 const rib = {
-  titulaire: 'Prénom Nom',
-  iban:      'FR76 XXXX XXXX XXXX XXXX XXXX XXX',
-  bic:       'XXXXXXXX',
+  titulaire: 'Pierre GAMEN',
+  iban: 'FR76 1382 5002 0004 2795 9836 884',
+  bic: 'CEPAFRPP382',
   reference: 'Margaux30',
 }
 // ────────────────────────────────────────────────────────────
 
 const ibanCopied = ref(false)
+const phoneCopied = ref(false)
 
 const copyIban = async () => {
   await navigator.clipboard.writeText(rib.iban.replace(/\s/g, ''))
   ibanCopied.value = true
   setTimeout(() => { ibanCopied.value = false }, 2500)
+}
+const copyPhone = async () => {
+  await navigator.clipboard.writeText(weroPhone.replace(/\s/g, ''))
+  phoneCopied.value = true
+  setTimeout(() => { phoneCopied.value = false }, 2500)
 }
 </script>
 
@@ -154,7 +192,7 @@ const copyIban = async () => {
 
 .cagnotte-desc {
   font-size: 14px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.7;
   max-width: 480px;
 }
@@ -280,6 +318,60 @@ const copyIban = async () => {
 
 .rib-copy:active {
   background: var(--c-light);
+}
+
+/* ── Progress Bar ────────────────────────────────────────────────── */
+.progress-block {
+  background: var(--c-dark);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.progress-right {
+  text-align: right;
+}
+
+.progress-amount {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: #f5f0e8;
+  display: block;
+}
+
+.progress-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.progress-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--c-gold);
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+.progress-percent {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-gold);
 }
 
 /* ── Back ────────────────────────────────────────────────── */
