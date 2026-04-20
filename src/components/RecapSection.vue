@@ -7,7 +7,7 @@
                 <em>une intention.</em>
             </h2>
             <p class="recap-desc">
-                Chaque contribution compte. Même 10 €, c'est déjà un bout du chemin.
+                Chaque contribution compte.
                 La cagnotte est ouverte, il n'y a pas de minimum et c'est anonyme.
             </p>
         </div>
