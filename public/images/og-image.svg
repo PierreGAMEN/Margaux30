@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Fond -->
+  <rect width="1200" height="630" fill="#111111"/>
+  
+  <!-- Texture diagonale subtile -->
+  <line x1="0" y1="630" x2="630" y2="0" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="200" y1="630" x2="830" y2="0" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="400" y1="630" x2="1030" y2="0" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="600" y1="630" x2="1200" y2="30" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+
+  <!-- Ligne dorée décorative -->
+  <line x1="80" y1="340" x2="200" y2="340" stroke="#b8a98a" stroke-width="1"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="280" font-family="Georgia, serif" font-size="18" 
+        fill="#b8a98a" letter-spacing="6">30 ANS · CADEAU COLLECTIF</text>
+
+  <!-- Titre principal -->
+  <text x="80" y="355" font-family="Georgia, serif" font-size="72" 
+        font-style="italic" fill="#f5f0e8">Pour Margaux,</text>
+
+  <!-- Sous-titre -->
+  <text x="80" y="420" font-family="Georgia, serif" font-size="32" 
+        fill="rgba(255,255,255,0.45)">qui grimpe haut et reste toujours stylée.</text>
+
+  <!-- Badge -->
+  <rect x="80" y="460" width="220" height="38" fill="#b8a98a" rx="2"/>
+  <text x="190" y="484" font-family="Georgia, serif" font-size="14" 
+        fill="#111111" text-anchor="middle" letter-spacing="3">✦ CONTRIBUER</text>
+</svg>
