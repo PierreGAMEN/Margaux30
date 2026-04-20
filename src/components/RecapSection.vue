@@ -8,7 +8,7 @@
             </h2>
             <p class="recap-desc">
                 Chaque contribution compte. Même 10 €, c'est déjà un bout du chemin.
-                La cagnotte est ouverte, il n'y a pas de minimum.
+                La cagnotte est ouverte, il n'y a pas de minimum et c'est anonyme.
             </p>
         </div>
 
