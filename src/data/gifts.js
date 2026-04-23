@@ -103,6 +103,6 @@ export const totalPrice = gifts.reduce((sum, g) => sum + g.price, 0)
 
 export const cagnotte = {
   objectif: totalPrice,
-  collecte: 200, // ← tu mets à jour ici au fur et à mesure
+  collecte: 290, // ← tu mets à jour ici au fur et à mesure
 }
 
